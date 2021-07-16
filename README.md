@@ -5,6 +5,6 @@ This project will study GPU-based implementations of numerical linear algebra al
 
 ![](https://github.com/jack-hanlon/mars-ice/blob/main/img/ice_mapper.jpg)
 
-<pre>Unfortunately, the full code implementation must stay private as per the request of my supervisor at the Canadian Space Agency.</pre>
+Unfortunately, the full code implementation must stay private as per the request of my supervisor at the Canadian Space Agency.
 
 <h4>Drop this project a star !</h4>
