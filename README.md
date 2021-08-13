@@ -28,7 +28,7 @@ Project is created with:
 Learn how to setup a local PyCUDA environment here: https://jack-hanlon.github.io/tutorials/2021/06/21/How-to-set-up-a-PyCUDA-environment-on-Windows-10.html
 
 # Setup
-To run this project, first install a PyCUDA environment on Windows 10: https://jack-hanlon.github.io/tutorials/2021/06/21/How-to-set-up-a-PyCUDA-environment-on-Windows-10.html
+To run this project, first install a PyCUDA environment on Windows 10: https://jack-hanlon.github.io/tutorials/2021/06/21/How-to-set-up-a-PyCUDA-environment-on-Windows-10.html  
 Next, clone this repo and cd into the source (src) directory.  
 From here, you will see three Electric Field Monte Carlo files.  
 * emc_cpu.py
