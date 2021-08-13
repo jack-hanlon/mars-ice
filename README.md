@@ -27,9 +27,9 @@ Project is created with:
 Learn how to setup a local PyCUDA environment here: https://jack-hanlon.github.io/tutorials/2021/06/21/How-to-set-up-a-PyCUDA-environment-on-Windows-10.html
 
 # Setup
-<p>To run this project, first install a PyCUDA environment on Windows 10: https://jack-hanlon.github.io/tutorials/2021/06/21/How-to-set-up-a-PyCUDA-environment-on-Windows-10.html</p>
-<p>Next, clone this repo and cd into the source (src) directory.</p>
-From here, you will see three Electric Field Monte Carlo files.
+To run this project, first install a PyCUDA environment on Windows 10: https://jack-hanlon.github.io/tutorials/2021/06/21/How-to-set-up-a-PyCUDA-environment-on-Windows-10.html
+Next, clone this repo and cd into the source (src) directory.  
+From here, you will see three Electric Field Monte Carlo files.  
 * emc_cpu.py
 * emc_cpu_multi.py
 * emc_gpu.py
@@ -38,10 +38,10 @@ This is the original source code for the Electric field Monte Carlo algorithm, I
 ### emc_cpu_multi.py
 A simple runtime upgrade to the initial algorithm using the Python multiprocessing library.
 ### emc_gpu.py
-An implementation of a hardware accelerated EMC algorithm using PyCUDA kernels.
+An implementation of a hardware accelerated EMC algorithm using PyCUDA kernels.  
 
-<p>Run these files using the commands specified in the How to run EMC.pdf file in the mars-ice-mapper/docs folder.</p>
-<p>Utilize the Requirements Specification Document for understanding how the kernels work.</p>
+Run these files using the commands specified in the How to run EMC.pdf file in the mars-ice-mapper/docs folder.  
+Utilize the Requirements Specification Document for understanding how the kernels work.  
 # Comments
 Unfortunately, the full code implementation must stay private as per the request of my supervisor at the Canadian Space Agency.
 
