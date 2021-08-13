@@ -46,7 +46,7 @@ An implementation of a hardware accelerated EMC algorithm using PyCUDA kernels.
 Run these files using the commands specified in the How to run EMC.pdf file in the mars-ice-mapper/docs folder.  
 Utilize the Requirements Specification Document for understanding how the kernels work.  
 # Comments
-Unfortunately, the full code implementation must stay private as per the request of my supervisor at the Canadian Space Agency.
+Unfortunately, the full code implementation must stay private as per the request of my supervisor at the Canadian Space Agency. However, the Monte Carlo implementation is not too complicated following the algorithm explanation in the research paper.
 # Bench Marks
 
 # Future Upgrades
