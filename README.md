@@ -12,6 +12,15 @@ This model has already been implemented using a conventional CPU-based approach,
 
 ![](https://github.com/jack-hanlon/mars-ice/blob/main/img/ice_mapper.jpg)
 # Technologies
+Project is created with:
+* Python version: 3.8.5
+* PyCUDA version: 2021.1
+* Windows 10
+* Anaconda 3
+* Visual Studio 2019
+* CUDA toolkit 11.2 & 11.3
+
+Learn how to setup a local PyCUDA environment here: https://jack-hanlon.github.io/tutorials/2021/06/21/How-to-set-up-a-PyCUDA-environment-on-Windows-10.html
 
 # Setup
 
