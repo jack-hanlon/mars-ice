@@ -6,6 +6,7 @@
 * [Setup](#setup)
 * [Comments](#comments)
 * [Bench Marks](#bench-marks)
+* [What's next?](#what's-next?)
 
 
 # Introduction
@@ -57,4 +58,4 @@ On a Nvidia mx 150 GPU + Intel i5-8250U CPU:
 
 Runtime for 100,000 photons scattered 1000 times each.
 
-
+# What's next?
