@@ -11,6 +11,10 @@
 This model has already been implemented using a conventional CPU-based approach, but may benefit substantially from the parallelism of a GPU-based implementation. Domain specific expertise and guidance was provided by Dr. Etienne Boulais of the CSA. </div>
 
 ![](https://github.com/jack-hanlon/mars-ice/blob/main/img/ice_mapper.jpg)
+This artist illustration depicts four orbiters as part of the International Mars Ice Mapper (I-MIM) mission concept. Low and to the left, an orbiter passes above the Martian surface, detecting buried water ice through a radar instrument and large reflector antenna. Circling Mars at a higher altitude are three telecommunications orbiters with one shown relaying data back to Earth.
+
+Image Credits: NASA
+https://www.nasa.gov/feature/nasa-international-partners-assess-mission-to-map-ice-on-mars-guide-science-priorities
 # Technologies
 Project is created with:
 * Python version: 3.8.5
