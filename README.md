@@ -46,8 +46,14 @@ An implementation of a hardware accelerated EMC algorithm using PyCUDA kernels.
 Run these files using the commands specified in the How to run EMC.pdf file in the mars-ice-mapper/docs folder.  
 Utilize the Requirements Specification Document for understanding how the kernels work.  
 # Comments
-Unfortunately, the full code implementation must stay private as per the request of my supervisor at the Canadian Space Agency. However, the Monte Carlo implementation is not too complicated following the algorithm explanation in the research paper.
+Unfortunately, the full code implementation must stay private as per the request of my supervisor at the Canadian Space Agency. However, the Monte Carlo implementation is not too complicated following the algorithm explanation in the research paper.  
+This project is mainly on Github to display my experience, nevertheless it may be useful to those working on similar projects and those learning CUDA.
 # Bench Marks
-
+On a Nvidia mx 150 GPU + Intel i5-8250U CPU:
+| emc_cpu.py   |      emc_cpu_multi.py      |  emc_gpu.py |
+|----------|:-------------:|------:|
+| col 1 is |  left-aligned | $1600 |
+| col 2 is |    centered   |   $12 |
+| col 3 is | right-aligned |    $1 |
 # Future Upgrades
 
