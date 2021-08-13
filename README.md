@@ -50,10 +50,10 @@ Unfortunately, the full code implementation must stay private as per the request
 This project is mainly on Github to display my experience, nevertheless it may be useful to those working on similar projects and those learning CUDA.
 # Bench Marks
 On a Nvidia mx 150 GPU + Intel i5-8250U CPU:
-| File | emc_cpu.py   |      emc_cpu_multi.py      |  emc_gpu.py |
-|----------|----------|:-------------:|------:|
-|Avg time to compute a photon| 1.28 s/ph |  0.60 s/ph | 0.00103 s/ph |
-|Time to compute 100,000| 35.56 hrs | 16.68 hrs | 1.72 mins|
+| File | emc_cpu.py   |      emc_cpu_multi.py      |  emc_gpu.py | emc_gpu.py w/ a RTX 3080 |
+|----------|----------|:-------------:|------:|----------|
+|Avg time to compute a photon| 1.28 s/ph |  0.60 s/ph | 0.00103 s/ph | 0.0000692 s/ph |
+|Time to compute 100,000| 35.56 hrs | 16.68 hrs | 1.72 mins| 6.92 secs |
 
 Runtime for 100,000 photons scattered 1000 times each.
 # Future Upgrades
