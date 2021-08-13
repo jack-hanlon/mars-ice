@@ -6,7 +6,7 @@
 * [Setup](#setup)
 * [Comments](#comments)
 * [Bench Marks](#bench-marks)
-* [Future Upgrades](#future-upgrades)
+
 
 # Introduction
 This project studied GPU-based implementations of numerical linear algebra algorithms, with a particular focus on a prototype Monte Carlo algorithm to model Mars subsurface ice detection developed by the Canadian Space Agency(CSA).  
@@ -56,5 +56,5 @@ On a Nvidia mx 150 GPU + Intel i5-8250U CPU:
 |Time to compute 100,000| 35.56 hrs | 16.68 hrs | 1.72 mins| 6.92 secs |
 
 Runtime for 100,000 photons scattered 1000 times each.
-# Future Upgrades
+
 
