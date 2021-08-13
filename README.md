@@ -7,4 +7,4 @@ This project studied GPU-based implementations of numerical linear algebra algor
 
 Unfortunately, the full code implementation must stay private as per the request of my supervisor at the Canadian Space Agency.
 
-<h4>Drop this project a star !</h4>
+
