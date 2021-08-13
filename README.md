@@ -2,7 +2,7 @@
 ## Using GPU Computing to model Mars subsurface ice detection with polarimetric synthetic aperture radar
 # Table of Contents
 * [Introduction](#introduction)
-* [Technologies](#tech)
+* [Technologies](#technologies)
 * [Setup](#setup)
 * [Comments](#comments)
 
@@ -11,7 +11,7 @@
 This model has already been implemented using a conventional CPU-based approach, but may benefit substantially from the parallelism of a GPU-based implementation. Domain specific expertise and guidance was provided by Dr. Etienne Boulais of the CSA. </div>
 
 ![](https://github.com/jack-hanlon/mars-ice/blob/main/img/ice_mapper.jpg)
-<font size=3>This artist illustration depicts four orbiters as part of the International Mars Ice Mapper (I-MIM) mission concept. Low and to the left, an orbiter passes above the Martian surface, detecting buried water ice through a radar instrument and large reflector antenna. Circling Mars at a higher altitude are three telecommunications orbiters with one shown relaying data back to Earth.</font>
+This artist illustration depicts four orbiters as part of the International Mars Ice Mapper (I-MIM) mission concept. Low and to the left, an orbiter passes above the Martian surface, detecting buried water ice through a radar instrument and large reflector antenna. Circling Mars at a higher altitude are three telecommunications orbiters with one shown relaying data back to Earth.
 
 Image Credits: NASA
 https://www.nasa.gov/feature/nasa-international-partners-assess-mission-to-map-ice-on-mars-guide-science-priorities
@@ -27,7 +27,18 @@ Project is created with:
 Learn how to setup a local PyCUDA environment here: https://jack-hanlon.github.io/tutorials/2021/06/21/How-to-set-up-a-PyCUDA-environment-on-Windows-10.html
 
 # Setup
-
+To run this project, first install a PyCUDA environment on Windows 10: https://jack-hanlon.github.io/tutorials/2021/06/21/How-to-set-up-a-PyCUDA-environment-on-Windows-10.html
+Next, clone this repo and cd into the source (src) directory
+From here, you will see three Electric Field Monte Carlo files.
+* emc_cpu.py
+* emc_cpu_multi.py
+* emc_gpu.py
+### emc_cpu.py
+This is the original source code for the Electric field Monte Carlo algorithm, I developed using pseudocode given to me by my project supervisor at the Canadian Space Agency.
+### emc_cpu_multi.py
+A simple runtime upgrade to the initial algorithm using the Python multiprocessing library.
+### emc_gpu.py
+An implementation of a hardware accelerated EMC algorithm using PyCUDA kernels.
 # Comments
 Unfortunately, the full code implementation must stay private as per the request of my supervisor at the Canadian Space Agency.
 
