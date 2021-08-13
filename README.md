@@ -5,7 +5,7 @@
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Comments](#comments)
-* [BenchMarks](#benchmarks)
+* [Bench Marks](#bench marks)
 
 # Introduction
 This project studied GPU-based implementations of numerical linear algebra algorithms, with a particular focus on a prototype Monte Carlo algorithm to model Mars subsurface ice detection developed by the Canadian Space Agency(CSA).  
