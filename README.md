@@ -5,6 +5,8 @@
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Comments](#comments)
+* [Bench Marks](#bench marks)
+* [Future Upgrades](#future upgrades)
 
 # Introduction
 This project studied GPU-based implementations of numerical linear algebra algorithms, with a particular focus on a prototype Monte Carlo algorithm to model Mars subsurface ice detection developed by the Canadian Space Agency(CSA).  
@@ -35,7 +37,7 @@ From here, you will see three Electric Field Monte Carlo files.
 * emc_cpu_multi.py
 * emc_gpu.py
 ### emc_cpu.py
-This is the original source code for the Electric field Monte Carlo algorithm, I developed using pseudocode given to me by my project supervisor at the Canadian Space Agency.
+This is the original source code for the Electric field Monte Carlo algorithm, developed using pseudocode shared by the Canadian Space Agency.
 ### emc_cpu_multi.py
 A simple runtime upgrade to the initial algorithm using the Python multiprocessing library.
 ### emc_gpu.py
@@ -45,5 +47,7 @@ Run these files using the commands specified in the How to run EMC.pdf file in t
 Utilize the Requirements Specification Document for understanding how the kernels work.  
 # Comments
 Unfortunately, the full code implementation must stay private as per the request of my supervisor at the Canadian Space Agency.
+# Bench Marks
 
+# Future Upgrades
 
