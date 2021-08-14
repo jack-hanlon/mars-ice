@@ -315,7 +315,7 @@ if __name__ == '__main__':
     t31 = time()
     print("downsized data ...")
     #-------------------------------------------------------------------------------#
-    PHOTON_LENGTH =
+    PHOTON_LENGTH = 1024
     # Convert lists to np arrays
     E_scatter_phi = np.array(E_scatter_phi)
     E_scatter_phi_rot = np.array(E_scatter_phi_rot)
