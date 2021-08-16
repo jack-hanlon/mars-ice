@@ -275,41 +275,21 @@ if __name__ == '__main__':
 
 
     R_list = sorted(R_list)
-    # E_scatter_phi
+
     for i in range(0,len(R_list)):
         if(R_list[i] >= len(E_scatter_phi)):
             del(E_scatter_phi[-1])
-        else:
-            del(E_scatter_phi[R_list[i]])
-    # E_scatter_phi_rot
-    for i in range(0,len(R_list)):
-        if(R_list[i] >= len(E_scatter_phi_rot)):
             del(E_scatter_phi_rot[-1])
-        else:
-            del(E_scatter_phi_rot[R_list[i]])
-    #E_scatter_theta_rot
-    for i in range(0,len(R_list)):
-        if(R_list[i] >= len(E_scatter_theta_rot)):
             del(E_scatter_theta_rot[-1])
-        else:
-            del(E_scatter_theta_rot[R_list[i]])
-    # E_scatter_theta
-    for i in range(0,len(R_list)):
-        if(R_list[i] >= len(E_scatter_theta)):
             del(E_scatter_theta[-1])
-        else:
-            del(E_scatter_theta[R_list[i]])
-    # Phi
-    for i in range(0,len(R_list)):
-        if(R_list[i] >= len(phi)):
             del(phi[-1])
-        else:
-            del(phi[R_list[i]])
-    # theta
-    for i in range(0,len(R_list)):
-        if(R_list[i] >= len(theta)):
             del(theta[-1])
         else:
+            del(E_scatter_phi[R_list[i]])
+            del(E_scatter_phi_rot[R_list[i]])
+            del(E_scatter_theta_rot[R_list[i]])
+            del(E_scatter_theta[R_list[i]])
+            del(phi[R_list[i]])
             del(theta[R_list[i]])
 
     t31 = time()
