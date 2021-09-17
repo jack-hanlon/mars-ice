@@ -1,5 +1,5 @@
 # Mars Ice Mapper
-## Using GPU Computing to model Mars subsurface ice detection with polarimetric synthetic aperture radar
+## Using GPU Computing to model Martian subsurface ice detection with polarimetric synthetic aperture radar
 # Table of Contents
 * [Introduction](#introduction)
 * [Technologies](#technologies)
