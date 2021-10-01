@@ -1,5 +1,5 @@
 # Mars Ice Mapper
-## Using GPU Computing to model Mars subsurface ice detection with polarimetric synthetic aperture radar
+## Using GPU Computing to model Martian subsurface ice detection with polarimetric synthetic aperture radar
 # Table of Contents
 * [Introduction](#introduction)
 * [Technologies](#technologies)
@@ -59,7 +59,7 @@ On a Nvidia mx 150 GPU + Intel i5-8250U CPU:
 Runtime for 100,000 photons scattered 1000 times each.
 
 # What's next?
-* The emc_gpu.py file will be refactored and cleaned up.
+* The emc_gpu.py file will be refactored and unit tested.
 * The 6 kernel calls will be converted into 1 monolithic kernel with the scattering loop inside to remove the Python overhead.
 * The file will be tested on a Nvidia RTX 8000 to test its optimal benchmark for operational use at the Canadian Space Agency.
 * The file could also be converted into C/C++ and using CUDA to remove all Python overhead for a more realistic use case on orbital satellite's.
