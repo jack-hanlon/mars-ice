@@ -52,3 +52,43 @@ if __name__ == '__main__':
     theta = [float(x) for x in theta]
 
     print("imported data from csv ...")
+
+    # DOWN SAMPLING
+    #-------------------------------------------------------------------------------#
+    # Divides 5248 element long lists into 1312 element lists
+    E_scatter_phi = E_scatter_phi[0::4]
+    E_scatter_phi_rot = E_scatter_phi_rot[0::4]
+    E_scatter_theta_rot = E_scatter_theta_rot[0::4]
+    E_scatter_theta = E_scatter_theta[0::4]
+    phi = phi[0::4]
+    theta = theta[0::4]
+
+    # Randomly remove 288 elements from lists so they are all 1024 elements long (This is why outputs differ on each run of emc_gpu.py --> shouldn't be a problem though)
+    t30 = time()
+    R_list = []
+    for i in range(0,288):
+        R = int(1311*np.random.random_sample())
+        R_list.append(R)
+
+
+    R_list = sorted(R_list)
+
+    for i in range(0,len(R_list)):
+        if(R_list[i] >= len(E_scatter_phi)):
+            del(E_scatter_phi[-1])
+            del(E_scatter_phi_rot[-1])
+            del(E_scatter_theta_rot[-1])
+            del(E_scatter_theta[-1])
+            del(phi[-1])
+            del(theta[-1])
+        else:
+            del(E_scatter_phi[R_list[i]])
+            del(E_scatter_phi_rot[R_list[i]])
+            del(E_scatter_theta_rot[R_list[i]])
+            del(E_scatter_theta[R_list[i]])
+            del(phi[R_list[i]])
+            del(theta[R_list[i]])
+
+    t31 = time()
+    print("downsized data ...")
+    #-------------------------------------------------------------------------------#
