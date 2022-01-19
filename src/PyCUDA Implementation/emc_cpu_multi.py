@@ -5,13 +5,9 @@
 # Filename   :emc_cpu_multi.py
 # Due        :April 27th 2021
 # ---------------------------- #
-import pycuda.autoinit
-import pycuda.driver as drv
 
-from pycuda.compiler import SourceModule
 from time import time
 import numpy as np
-import matplotlib.pyplot as plt
 import cmath
 import csv
 import multiprocessing as mp
