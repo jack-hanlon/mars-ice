@@ -22,8 +22,6 @@ import csv
 import math
 from time import time
 # Step 0: FUNCTION DECLARATION
-# -----------------------------------------------------------------------------#
-
 if __name__ == '__main__':
     t9 = time()
     t40 = time()
@@ -36,17 +34,13 @@ if __name__ == '__main__':
     #include <stdio.h>
     typedef pycuda::complex<float> cmplx;
 
-
-    /*----------------------------------------------------------------------------------------------------------------*/
     __global__ void monte_carlo(cmplx *E_scatter_phi, cmplx *E_scatter_phi_rot,cmplx *E_scatter_theta_rot,cmplx *E_scatter_theta, cmplx *theta, cmplx *E, cmplx *E_totsq,float *float_E_totsq, float *cum_sum_E_totsq){
 
       // each block will have one photon doing this our gpuarray will be length of all photons and be split up accordingly
       const int i = blockIdx.x * blockDim.x + threadIdx.x;
       // PRIVATE FUNCTION (Converted from CANADIAN SPACE AGENCY PSEUDOCODE)
 
-
     }
-    /*----------------------------------------------------------------------------------------------------------------*/
     __global__ void sum_array(float *a, int n) {
          int tid = threadIdx.x; // Create a thread id equal to the thread index
          int offset = 2 * blockIdx.x * blockDim.x; // Create an offset value equal to length of block (Algo uses half a block per 2 * number of threads in block because the sums half the number of threads needed)
@@ -65,9 +59,7 @@ if __name__ == '__main__':
             }
             __syncthreads();
         }
-
     }
-    /*----------------------------------------------------------------------------------------------------------------*/
     __global__ void mult_random(float *S,float *R, int n, int scatter_bit, float *out,float *out_reduced ) {
         const int i = blockIdx.x * blockDim.x + threadIdx.x;
         // On each scattering - reset the out and out_reduced arrays to 0
@@ -85,7 +77,6 @@ if __name__ == '__main__':
 
 
     }
-    /*----------------------------------------------------------------------------------------------------------------*/
      __global__ void running_sum(float *in,float *out,float *R, int num_photons,int block_size,float *run_sum) {
               const int i = threadIdx.x + blockIdx.x * blockDim.x;
               // Empty previous calculation from temporary arrays
@@ -103,10 +94,7 @@ if __name__ == '__main__':
                   }
 
               }
-
-
       }
-      /*----------------------------------------------------------------------------------------------------------------*/
      __global__ void E_next_update(float *INDEX,cmplx *E_scatter_phi, cmplx *E_scatter_phi_rot,cmplx *E_scatter_theta_rot,cmplx *E_scatter_theta,cmplx *EE1, cmplx *EE2,cmplx *nE,cmplx *Norm,cmplx *E){
             // Compute the update to the scattered electric field
             const int i = threadIdx.x + blockIdx.x * blockDim.x;
@@ -152,7 +140,6 @@ if __name__ == '__main__':
 
 
      }
-     /*----------------------------------------------------------------------------------------------------------------*/
      __global__ void photon_lcsys_update(float *INDEX,float *theta,float *phi,float *photon_m, float *photon_n, float *photon_s, float *mprime_lc, float *nprime_lc, float *sprime_lc, float *tmp_m, float *tmp_n, float *tmp_s){
             // Update the photon local co-ordinate system for all photons in parallel
             const int i = threadIdx.x + blockIdx.x*blockDim.x;
@@ -214,12 +201,10 @@ if __name__ == '__main__':
 
 
       }
-     /*----------------------------------------------------------------------------------------------------------------*/
     """)
 
     t41 = time()
     # STEP 1: Inititialize E, csv arrays, m,n,s
-    # -----------------------------------------------------------------------------#
     # Inititialize the input data arrays
     E_scatter_phi= []
     E_scatter_phi_rot = []
@@ -257,7 +242,6 @@ if __name__ == '__main__':
 
     print("imported data from csv ...")
     # DOWN SAMPLING
-    #-------------------------------------------------------------------------------#
     # Divides 5248 element long lists into 1312 element lists
     E_scatter_phi = E_scatter_phi[0::4]
     E_scatter_phi_rot = E_scatter_phi_rot[0::4]
@@ -294,7 +278,6 @@ if __name__ == '__main__':
 
     t31 = time()
     print("downsized data ...")
-    #-------------------------------------------------------------------------------#
     PHOTON_LENGTH = 1024
     # Convert lists to np arrays
     E_scatter_phi = np.array(E_scatter_phi)
@@ -345,7 +328,6 @@ if __name__ == '__main__':
 
 
     # STEP 2: SEND FIRST BATCH OF PHOTONS TO COMPLETE SCATTERINGS ON GPU
-    # -----------------------------------------------------------------------------#
     # Create a gpuarray of random numbers (length should be data length x # photons)
     t11 = time()
     R = np.random.random_sample(size = n)
@@ -417,7 +399,6 @@ if __name__ == '__main__':
 
     # SCATTERING LOOP WILL START HERE
     # CALCULATING E_totsq
-    # ------------------------------------------------------------------------- #
     t1 = time()
     print("starting scattering loop ...")
     # PyCUDA collecting C CUDA functions for use in Python
@@ -436,13 +417,10 @@ if __name__ == '__main__':
         block=(PHOTON_LENGTH, 1, 1),grid=(num_photons,1))
 
         # SUMMING E_totsq
-        # ------------------------------------------------------------------------- #
-
         # Compute sum of E_totsq array (fast)
         sum_array(float_E_totsq_gpu,np.int32(n),block=(PHOTON_LENGTH,1,1),grid=(grid_sum_size,1))
 
         # MULTIPLYING SUM OF E_totsq by RANDOM NUMBERS
-        # ------------------------------------------------------------------------- #
         # multiply each sum of E_totsq for each  photon by a uniform random number
         mult_random(float_E_totsq_gpu,R_gpu,np.int32(n),np.int32(scatter_bit),out_gpu,out_gpu_reduced, \
         block=(PHOTON_LENGTH, 1, 1),grid=(num_photons,1))
@@ -451,14 +429,11 @@ if __name__ == '__main__':
         scatter_bit += 1
 
         # COMPUTE THE RUNNING SUM OF EACH PHOTON IN PARALLEL AND PICK THE INDEX FOR EACH PHOTON
-        # ------------------------------------------------------------------------- #
         # Full Cumulative sum of E_totsq_gpu
 
         running_sum(cum_sum_E_totsq_gpu,INDEX_gpu,out_gpu_reduced,np.int32(num_photons),np.int32(PHOTON_LENGTH),run_sum_gpu,block=(1, 1, 1),grid=(num_photons,1))
 
         # UPDATE E , m , n and s
-        # ------------------------------------------------------------------------- #
-
 
         # Update E
 
